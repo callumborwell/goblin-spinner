@@ -8,5 +8,77 @@
     <script src="js/main.js"></script>
 </head>
 <body>
+    <div id="explanation">
+        <h1>Instructions</h1>
+        <h2>Adding Goblins</h2>
+        <b>After typing a donator's name into the top textbox you can</b>
+        <ul>
+            <ol>Add a basic goblin for $2</ol>
+            OR
+            <ol>Gamble for a little more on the wheel spin chance for a more powerful goblin</ol>
+        </ul>
+        <b>Where do the goblins go? Into the horde</b>
+        <ul>
+            You can check the horde as it grows by clicking "Check Horde"
+        </ul>
+        <h2>Unleash the Horde</h2>
+        <b>The goblins pounce on the adventurers when someone donates to become their leader, or if they fumble into the open because the horde grew too large</b>
+        <h3>Leading the Horde</h3>
+        <ul>
+            Once you believe the horde has grown large enough, you can donate bigger bucks to realease it and make it yours.
+            <ol><b>Goblin Brute</b> - bigger stronger goblin</ol>
+            <ol><b>Worg Rider</b> - goblin astride a vicious wolf-like creature</ol>
+            <ol><b>Goblin Mage</b> - dangerously explosive magic wielder</ol>
+            When you do this, the goblins have successfully ambushed the party and get to strike first.
+        </ul>
+        <h3>OR - Fumbled Check</h3>
+        <b>As the horde grows, waiting for the right time to ambush, it could be exposed early by a bumbling goblin. </b><br>
+        <ul>Whenever a goblin is added, by button or wheel spin:
+            <ol>1. Increase the horde count by one</ol>
+            <ol>2. Roll a 100-sided die for the Fumble Check</ol>
+            <ol>3. If the Fumble Check roll is greater than the horde count, the horde is still hidden</ol>
+            BUT 
+            <ol>4. If the Fumble Check is less than or equal to the horde count, the horde is triggered</ol>
+            <ol>     4a. The goblin that caused the fumble get to be the leader</ol>
+            <ol>     4b. A fumbled horde goes after the adventurers</ol>
+        </ul>
+        <h2>The Goblin List Tip</h2>
+        When the goblin list is visible, you can click on a goblin to strike through it and mark it as dead
+    </div>
+    <div id="top">
+        <input type="text" id="donorName" placeholder="Your name here">
+        <button type="submit" id="basicGoblin" value="$2 Goblin" onclick="goblinAdd('Goblin')">$2 Goblin</button>
+    </div>
+    <div id="popUpList">
+        <div id="listContainer">
+            <b id='hordeTitle' onclick="death('hordeTitle')">Growing Horde</b>
+            <ul id='list'> 
+            </ul>
+            <input id="horde" type="submit" value="Horde Ended" onclick="confirmEnd()" class="center">
+            <input id="hide" type="submit" value="Hide" onclick="hideHorde()" class="center">
+        </div>
+    </div>
+    <div id="counter">
+        <p id="hordeCount">0</p>
+        <p id="fumblePrompt">roll above 0 on a d100</p>
+        <div>
+            <p id="fumbleRoll"></p>
+            <p id="fumbleResult"></p>
+        </div>
+    </div>
+    <div id="popUpFail">
+        <div id="listContainer">
+            <p>Fumble Check Failed!</p>
+            <p id="fumbleCulprit"> stumbles the horde into the open</p>
+            <input type="submit" value="Fumble the Horde" class="center" onclick="fumbleHorde()">
+        </div>
+    </div>
+    <div id="release">
+        <input type="submit" id="peekHorde" value="Check Horde" onclick="checkHorde()" class="center"><br><br><br><br>
+        <button type="submit" id="unleashBrute" value="$20 Goblin Brute" onclick="hordeLeader('Brute')">$20 Goblin Brute</button><br>
+        <button type="submit" id="unleashWorg" value="$30 Worg Rider" onclick="hordeLeader('Worg Rider')">$30 Worg Rider</button><br>
+        <button type="submit" id="unleashMage" value="$50 Goblin Mage" onclick="hordeLeader('Goblin Mage')">$50 Goblin Mage</button><br>
+    </div>
+    <div id="board"></div>
 </body>
 </html>

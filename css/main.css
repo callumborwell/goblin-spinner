@@ -1,5 +1,5 @@
 body {
-    background: #000000;
+    background: white;
     padding: 0px;
     margin: 0px;
     font-family: 'Rajdhani', sans-serif;
@@ -9,7 +9,164 @@ canvas {
     display: block;
     margin: 0;
     position: absolute;
+    top: 400px;
+    right: 0px;
+    transform: translate(0, -50%);
+    clip-path: circle(218px at center);
+}
+
+div {
+    position: absolute;
+    width: 500px;
+    right: 0px;
+}
+
+li {
+    list-style-type:none;
+}
+
+p {
+    text-align: center;
+}
+
+button, .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+    background-color: #b18080;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #6d6d6d;
+}
+  
+button:hover {background-color: #bb4d39}
+  
+button:active {
+    background-color: #bb4d39;
+    box-shadow: 0 5px #535353;
+    transform: translateY(4px);
+}
+
+#donorName {
+    position: absolute;
+    top: 125px;
+    right: 100px;
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 180px;
+    transform: rotate(5deg);
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.342);
+    border: 0;
+}
+
+#basicGoblin {
+    position: absolute;
+    top: 160px;
+    right: 20px;
+}
+
+.death {
+    text-decoration: line-through;
+}
+
+#top {
+    top: 0px
+}
+
+#counter {
+    top: 600px;
+}
+
+#release {
+    top: 800px;
+}
+
+#popUpList, #popUpFail {
+    top:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    height:100%;
+}
+
+#listContainer {
+    background-image: url('../images/papyrus.png');
+    background-size: 100% 100%;
+    width:300px;
+    padding: 50px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#explanation {
+    position: relative;
+}
+
+#board {
+    pointer-events: none;
+    top: 0px;
+    height: 1080px;
+    background-image: url('../images/boardart.jpg');
+    z-index: -2;
+}
+
+#hordeCount {
+    position: absolute;
+    top: 40px;
+    right: 360px;
+    font-size: 55px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    transform: rotate(-8deg);
+    color: #bb4d39;
+}
+
+#peekHorde {
+    position: absolute;
+    background: rgb(109, 145, 104);
+    top: -10px;
+    right: 360px;
+    transform: rotate(-8deg);
+}
+
+#fumblePrompt {
+    position: absolute;
+    top: 53px;
+    right: 50px;
+    transform: rotate(4deg);
+}
+
+#fumbleRoll {
+    position: absolute;
+    top: 44px;
+    right: 94px;
+    font-size: 55px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    transform: rotate(5deg);
+    color: #ffffff;
+    text-shadow: 0px 0px 12px #000000;
+}
+
+#fumbleResult {
+    position: absolute;
+    top: 170px;
+    right: 50px;
+    transform: rotate(5deg);
+}
+
+#hordeTitle {
+    font-size: 30px;
+    font-family: "Brush Script M7";
 }
